@@ -1,0 +1,35 @@
+{
+  "name": "iris",
+  "version": "1.0.0",
+  "description": "Site for those seeking helping during crisis time. ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saulhappy/iris.git"
+  },
+  "keywords": [
+    "javascript",
+    "covid-19",
+    "mern",
+    "saul"
+  ],
+  "author": "Saul Feliz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saulhappy/iris/issues"
+  },
+  "homepage": "https://github.com/saulhappy/iris#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7",
+    "request": "^2.88.2"
+  }
+}
