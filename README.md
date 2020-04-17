@@ -1,10 +1,6 @@
 # Iris: A Site to Help Your Neighbors During Crisis
 
-====================================
-
 ## Status: under development
-
-====================================
 
 ## Table of contents
 
