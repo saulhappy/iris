@@ -24,17 +24,17 @@ Iris will be a site where users can create their profiles, add where they live, 
 
 ## Technical Information
 
-This application is written in Node.js using the Express.js framework in the backend and React.js in the frontend.
+This application is written in Node.js using the Express.js framework in the backend and React.js in the frontend. The ASYNC/AWAIT paradigm was used for promise resolution throughout.
 
 ### Backend Details
 
 Mongo is used for data persistence. The following packages where used in backend development:
 
-- [mongoose](https://mongoosejs.com/): for object modeling with MongoDB.
-- [express](https://expressjs.com/): for API and routing utilities.
+- [mongoose](https://mongoosejs.com/): for object modeling with MongoDB
+- [express](https://expressjs.com/): for API and routing utilities
 - [bcryst.js](https://www.npmjs.com/package/bcryptjs): for password encryption
 - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken): for data encryption and protection
-- [config](https://www.npmjs.com/package/config): for setting and deployment management
+- [config](https://www.npmjs.com/package/config): for custom authentication middleware
 
 ### Frontend Details
 
