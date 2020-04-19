@@ -39,19 +39,31 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
+    const {
+      about,
+      neighborhood,
+      openForRequests,
+      helpWith,
+      youtube,
+      twitter,
+      instagram,
+      linkedin,
+      facebook,
+    } = req.body;
+
+    // Build profile object
+
+    const profileFields = {};
+    profileFields.user = req.user.id;
+    if (neighborhood) profileFields.neighborhood = neighborhood;
+    if (neighborhood) profileFields.neighborhood = neighborhood;
+    if (neighborhood) profileFields.neighborhood = neighborhood;
+    if (neighborhood) profileFields.neighborhood = neighborhood;
+    if (neighborhood) profileFields.neighborhood = neighborhood;
+    if (neighborhood) profileFields.neighborhood = neighborhood;
+    if (neighborhood) profileFields.neighborhood = neighborhood;
+    if (neighborhood) profileFields.neighborhood = neighborhood;
   }
-  //     const {
-  //       about,
-  //       neighborhood,
-  //       openForRequests,
-  //       helpWith,
-  //       youtube,
-  //       twitter,
-  //       instagram,
-  //       linkedin,
-  //       facebook,
-  //     } = req.body;
-  //   },
 );
 
 module.exports = router;
