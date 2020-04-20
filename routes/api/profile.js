@@ -56,13 +56,17 @@ router.post(
     const profileFields = {};
     profileFields.user = req.user.id;
     if (neighborhood) profileFields.neighborhood = neighborhood;
-    if (neighborhood) profileFields.neighborhood = neighborhood;
-    if (neighborhood) profileFields.neighborhood = neighborhood;
-    if (neighborhood) profileFields.neighborhood = neighborhood;
-    if (neighborhood) profileFields.neighborhood = neighborhood;
-    if (neighborhood) profileFields.neighborhood = neighborhood;
-    if (neighborhood) profileFields.neighborhood = neighborhood;
-    if (neighborhood) profileFields.neighborhood = neighborhood;
+    if (openForRequests) profileFields.openForRequests = openForRequests;
+    if (youtube) profileFields.youtube = youtube;
+    if (twitter) profileFields.twitter = twitter;
+    if (instagram) profileFields.instagram = instagram;
+    if (linkedin) profileFields.linkedin = linkedin;
+    if (facebook) profileFields.facebook = facebook;
+    if (helpWith) {
+      profileFields.helpWith = helpWith.split(",");
+    }
+    console.log(profileFields.helpWith);
+    res.send("howdy");
   }
 );
 
