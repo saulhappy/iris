@@ -55,18 +55,41 @@ router.post(
 
     const profileFields = {};
     profileFields.user = req.user.id;
+    if (about) profileFields.about = about;
     if (neighborhood) profileFields.neighborhood = neighborhood;
     if (openForRequests) profileFields.openForRequests = openForRequests;
-    if (youtube) profileFields.youtube = youtube;
-    if (twitter) profileFields.twitter = twitter;
-    if (instagram) profileFields.instagram = instagram;
-    if (linkedin) profileFields.linkedin = linkedin;
-    if (facebook) profileFields.facebook = facebook;
     if (helpWith) {
       profileFields.helpWith = helpWith.split(",");
     }
-    console.log(profileFields.helpWith);
-    res.send("howdy");
+    // Build social object
+    profileFields.social = {};
+    if (youtube) profileFields.social.youtube = youtube;
+    if (twitter) profileFields.social.twitter = twitter;
+    if (instagram) profileFields.social.instagram = instagram;
+    if (linkedin) profileFields.social.linkedin = linkedin;
+    if (facebook) profileFields.social.facebook = facebook;
+
+    // get a profile from Mongo
+    try {
+      let profile = await Profile.findOne({ user: req.user.id });
+
+      if (profile) {
+        //update profile if profile found.
+        profile = await Profile.findOneAndUpdate(
+          { user: req.user.id },
+          { $set: profileFields },
+          { new: true }
+        );
+        return res.json(profile);
+      }
+      // if profile not found, create new profile.
+      profile = new Profile(profileFields);
+      await profile.save();
+      res.json(profile);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server Error");
+    }
   }
 );
 
