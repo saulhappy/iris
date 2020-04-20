@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const router = express.Router();
 const auth = require("../../middleware/auth");
 const { check, validationResult } = require("express-validator");
@@ -93,7 +94,7 @@ router.post(
   }
 );
 
-// @route   GET api/profile/me
+// @route   GET api/profile
 // @desc    Get all profiles
 // @access  Public
 
@@ -106,6 +107,31 @@ router.get("/", async (req, res) => {
     res.json(profiles);
   } catch (err) {
     console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+// @route   GET api/profile/user/:user_id
+// @desc    Get profile by user id
+// @access  Public
+
+router.get("/user/:user_id", async (req, res) => {
+  try {
+    const profile = await Profile.findOne({
+      user: req.params.user_id,
+    }).populate("user", ["firstName", "avatar"]);
+
+    // if no profile, send no profile found message.
+    if (!profile)
+      return res.status(400).json({ msg: "Iris profile not found." });
+    // else, send the profile
+    res.json(profile);
+  } catch (err) {
+    // Check if the ID is valid
+    const valid = mongoose.Types.ObjectId.isValid(req.params.user_id);
+    if (!valid) {
+      return res.status(400).json({ msg: "Profile not found" });
+    }
     res.status(500).send("Server Error");
   }
 });
