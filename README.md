@@ -8,6 +8,7 @@
 - [Technical Information](#technical-information)
 - [Backend Details](#backend-details)
 - [Fronted Details](#frontend-details)
+- [Functionality Details](#functionality-detials)
 - [Demo](#demo)
 - [Deployment](#deployment)
 - [Contact](#contact)
@@ -39,6 +40,14 @@ Mongo is used for data persistence. The following packages where used in backend
 ### Frontend Details
 
 A single-page React.js application serves as the frontend. More info TBD.
+
+## Functionality Details
+
+Users are able to experience the following functionalities:
+
+- Create, update, and delete an account with information about who they are. A user picture will automatically be generated if they use gravatar(https://en.gravatar.com/). If the user doesn't have a gravatar account, a default image is created.
+- Create, update, and delete a profile with further information about who they are, what neighborhood they live in, what kinds of activities they are able to help others with, and links to their social media presence.
+- Post comments, delete comments, like comments. Comments can only be liked once per user. Comments live independent of the user, so that their comments can exist even if a user deletes their profile.
 
 ## Demo
 
