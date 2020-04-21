@@ -31,8 +31,8 @@ This application is written in Node.js using the Express.js framework in the bac
 Mongo is used for data persistence. The following packages where used in backend development:
 
 - [mongoose](https://mongoosejs.com/): for object modeling with MongoDB
-- [express](https://expressjs.com/): for API and routing utilities
-- [bcryst.js](https://www.npmjs.com/package/bcryptjs): for password encryption
+- [express.js](https://expressjs.com/): for API and routing utilities
+- [bcrypt.js](https://www.npmjs.com/package/bcryptjs): for password encryption
 - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken): for data encryption and protection
 - [config](https://www.npmjs.com/package/config): for custom authentication middleware
 
