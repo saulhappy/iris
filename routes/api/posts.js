@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
 const auth = require("../../middleware/auth");
+const mongoose = require("mongoose");
 
 const Post = require("../../models/Post");
 const Profile = require("../../models/Profile");
@@ -50,6 +51,28 @@ router.get("/", auth, async (req, res) => {
     res.json(posts);
   } catch (err) {
     console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+// @route   GET api/posts/:id
+// @desc    Get post by ID
+// @access  Private
+
+router.get("/:id", auth, async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+
+    if (!post) {
+      return res.status(404).json({ msg: "Post not found" });
+    }
+    res.json(post);
+  } catch (err) {
+    // Check if the ID is valid
+    const valid = mongoose.Types.ObjectId.isValid(req.params.post_id);
+    if (!valid) {
+      return res.status(400).json({ msg: "Post not found" });
+    }
     res.status(500).send("Server Error");
   }
 });
