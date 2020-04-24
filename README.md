@@ -39,7 +39,16 @@ Mongo is used for data persistence. The following packages where used in backend
 
 ### Frontend Details
 
-A single-page React.js application serves as the frontend. More info TBD.
+A single-page React.js application serves as the frontend. The following packages where used in frontend development:
+
+- [axios](https://www.npmjs.com/package/axios): for http requests and global headers
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom): for web routing
+- [redux](https://redux.js.org/introduction/getting-started): for state management
+- [react-redux](https://react-redux.js.org/introduction/quick-start): for react and redux binding
+- [redux-thunk](https://www.npmjs.com/package/redux-thunk): middleware for async requests in actions
+- [redux-devtools-extensions](https://www.npmjs.com/package/redux-devtools-extension): helper for using redux devtools
+- [moment](https://www.npmjs.com/package/moment): for date formatting
+- [react-moment](https://www.npmjs.com/package/react-moment): to use moment within react components
 
 ## Functionality Details
 
