@@ -7,8 +7,8 @@ const Landing = () => {
         <div className='landing-inner'>
           <h1 className='x-large'>Welcome to Iris</h1>
           <p className='lead'>
-            Create a helper profile. Share Posts. Get help from your neighbors
-            during a crisis.
+            Create a profile. Share Posts. Get help from your neighbors during a
+            crisis.
           </p>
           <div className='buttons'>
             <a href='register.html' className='btn btn-primary'>
