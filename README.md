@@ -49,6 +49,7 @@ A single-page React.js application serves as the frontend. The following package
 - [redux-devtools-extensions](https://www.npmjs.com/package/redux-devtools-extension): helper for using redux devtools
 - [moment](https://www.npmjs.com/package/moment): for date formatting
 - [react-moment](https://www.npmjs.com/package/react-moment): to use moment within react components
+- [uuid](https://www.npmjs.com/package/uuid): for redux alert IDs
 
 ## Functionality Details
 
