@@ -30,7 +30,7 @@ const Register = ({ setAlert }) => {
     e.preventDefault();
 
     if (password !== passwordVerify) {
-      setAlert("Passwords do not match", "danger");
+      setAlert("Error: passwords do not match. Please try again.", "danger");
     } else {
       console.log(formData);
     }
