@@ -4,6 +4,8 @@ import {
   REGISTER_FAIL,
   USER_LOADED,
   AUTH_ERROR,
+  LOGIN_FAIL,
+  LOGIN_SUCCESS,
 } from "./types";
 import { setAlert } from "./alert";
 import setAuthToken from "../utils/setAuthToken";
