@@ -14,7 +14,10 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </a>
       </li>
       <li>
-        <Link to='/about'>About</Link>
+        <Link to='/about'>
+          <i className='fas fa-info'></i>{" "}
+          <span className='hide-sm'> About</span>
+        </Link>
       </li>
     </ul>
   );
@@ -22,16 +25,29 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <a href='#!'>People Helping</a>
+        <a href='#!'>
+          <i className='fas fa-people-carry'></i>{" "}
+          <span className='hide-sm'>People Helping</span>
+        </a>
+      </li>
+
+      <li>
+        <Link to='/register'>
+          <i className='fas fa-user-plus'></i>{" "}
+          <span className='hide-sm'> Register</span>
+        </Link>
       </li>
       <li>
-        <Link to='/register'>Register</Link>
+        <Link to='/login'>
+          <i className='fas fa-sign-in-alt'></i>{" "}
+          <span className='hide-sm'> Login</span>
+        </Link>
       </li>
       <li>
-        <Link to='/login'>Login</Link>
-      </li>
-      <li>
-        <Link to='/about'>About</Link>
+        <Link to='/about'>
+          <i className='fas fa-info'></i>{" "}
+          <span className='hide-sm'> About</span>
+        </Link>
       </li>
     </ul>
   );
@@ -40,7 +56,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i>Iris</i>
+          <i className='fas fa-rainbow' /> Iris
         </Link>
       </h1>
       {!loading && (
