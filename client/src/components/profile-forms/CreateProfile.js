@@ -29,69 +29,68 @@ const CreateProfile = (props) => {
     facebook,
   } = formData;
 
+  const onChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   return (
     <Fragment>
       <h1 className='large text-primary'>Create Your Profile</h1>
       <p className='lead'>
-        <i className='fas fa-user'></i> Let's get some information to make your
-        profile stand out
+        <i className='fas fa-user'></i> Tell us about yourself and how you'd
+        like to help others
       </p>
       <small>* = required field</small>
+
       <form className='form'>
         <div className='form-group'>
-          <select name='status'>
-            <option value='0'>* Select Professional Status</option>
-            <option value='Developer'>Developer</option>
-            <option value='Junior Developer'>Junior Developer</option>
-            <option value='Senior Developer'>Senior Developer</option>
-            <option value='Manager'>Manager</option>
-            <option value='Student or Learning'>Student or Learning</option>
-            <option value='Instructor'>Instructor or Teacher</option>
-            <option value='Intern'>Intern</option>
-            <option value='Other'>Other</option>
+          <textarea
+            placeholder='* Tell us a bit about yourself'
+            name='about'
+            value={about}
+            onChange={(e) => onChange(e)}
+          ></textarea>
+          <small className='form-text'>Tell us a little about yourself</small>
+        </div>
+
+        <div className='form-group'>
+          <textarea
+            placeholder='What part of town do you live in?'
+            name='neighborhood'
+            value={neighborhood}
+            onChange={(e) => onChange(e)}
+          ></textarea>
+          <small className='form-text'>
+            Commonly known areas or neighborhoods for your town (e.g. downtown,
+            west side, south austin, etc.)
+          </small>
+        </div>
+
+        <div className='form-group'>
+          <select
+            name='openForRequests'
+            value={openForRequests}
+            onChange={(e) => onChange(e)}
+          >
+            <option value='0'>* Are you currently open for requests?</option>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
           </select>
           <small className='form-text'>
-            Give us an idea of where you are at in your career
+            Can others contact you to help them out?
           </small>
         </div>
-        <div className='form-group'>
-          <input type='text' placeholder='Company' name='company' />
-          <small className='form-text'>
-            Could be your own company or one you work for
-          </small>
-        </div>
-        <div className='form-group'>
-          <input type='text' placeholder='Website' name='website' />
-          <small className='form-text'>
-            Could be your own or a company website
-          </small>
-        </div>
-        <div className='form-group'>
-          <input type='text' placeholder='Location' name='location' />
-          <small className='form-text'>
-            City & state suggested (eg. Boston, MA)
-          </small>
-        </div>
-        <div className='form-group'>
-          <input type='text' placeholder='* Skills' name='skills' />
-          <small className='form-text'>
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
-          </small>
-        </div>
+
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Github Username'
-            name='githubusername'
+            placeholder='I can help with...'
+            name='helpWith'
+            value={helpWith}
+            onChange={(e) => onChange(e)}
           />
           <small className='form-text'>
-            If you want your latest repos and a Github link, include your
-            username
+            Please seperate with commas (eg. grocery shopping, lawn work,
+            repairs, masks)
           </small>
-        </div>
-        <div className='form-group'>
-          <textarea placeholder='A short bio of yourself' name='bio'></textarea>
-          <small className='form-text'>Tell us a little about yourself</small>
         </div>
 
         <div className='my-2'>
@@ -109,27 +108,57 @@ const CreateProfile = (props) => {
           <Fragment>
             <div className='form-group social-input'>
               <i className='fab fa-twitter fa-2x'></i>
-              <input type='text' placeholder='Twitter URL' name='twitter' />
+              <input
+                type='text'
+                placeholder='Twitter URL'
+                name='twitter'
+                value={twitter}
+                onChange={(e) => onChange(e)}
+              />
             </div>
 
             <div className='form-group social-input'>
               <i className='fab fa-facebook fa-2x'></i>
-              <input type='text' placeholder='Facebook URL' name='facebook' />
+              <input
+                type='text'
+                placeholder='Facebook URL'
+                name='facebook'
+                value={facebook}
+                onChange={(e) => onChange(e)}
+              />
             </div>
 
             <div className='form-group social-input'>
               <i className='fab fa-youtube fa-2x'></i>
-              <input type='text' placeholder='YouTube URL' name='youtube' />
+              <input
+                type='text'
+                placeholder='YouTube URL'
+                name='youtube'
+                value={youtube}
+                onChange={(e) => onChange(e)}
+              />
             </div>
 
             <div className='form-group social-input'>
               <i className='fab fa-linkedin fa-2x'></i>
-              <input type='text' placeholder='Linkedin URL' name='linkedin' />
+              <input
+                type='text'
+                placeholder='Linkedin URL'
+                name='linkedin'
+                value={linkedin}
+                onChange={(e) => onChange(e)}
+              />
             </div>
 
             <div className='form-group social-input'>
               <i className='fab fa-instagram fa-2x'></i>
-              <input type='text' placeholder='Instagram URL' name='instagram' />
+              <input
+                type='text'
+                placeholder='Instagram URL'
+                name='instagram'
+                value={instagram}
+                onChange={(e) => onChange(e)}
+              />
             </div>
           </Fragment>
         )}
