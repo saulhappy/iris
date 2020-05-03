@@ -4,13 +4,26 @@ import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 import { getCurrentProfile } from "../../actions/profile";
 
-const Home = ({ getCurrentProfile, auth, profile: { profile, loading } }) => {
+const Home = ({
+  getCurrentProfile,
+  auth: { user },
+  profile: { profile, loading },
+}) => {
   useEffect(() => {
     getCurrentProfile();
   }, []);
 
   // if there is no profile and jsx of component still loading, show the spinner
-  return loading && profile === null ? <Spinner /> : <Fragment>test</Fragment>;
+  return loading && profile === null ? (
+    <Spinner />
+  ) : (
+    <Fragment>
+      <h1 className='large text-primary'>Home</h1>
+      <p className='lead'>
+        <i className='fas fa-house-user'> Hello {user && user.firstName}</i>
+      </p>
+    </Fragment>
+  );
 };
 
 Home.propTypes = {
