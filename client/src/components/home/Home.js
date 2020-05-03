@@ -22,6 +22,11 @@ const Home = ({
       <p className='lead'>
         <i className='fas fa-house-user'> Hello {user && user.firstName}</i>
       </p>
+      {profile !== null ? (
+        <Fragment>has profile</Fragment>
+      ) : (
+        <Fragment>has no profile</Fragment>
+      )}
     </Fragment>
   );
 };
