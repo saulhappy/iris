@@ -21,14 +21,6 @@ const UserSchema = new mongoose.Schema({
   avatar: {
     type: String,
   },
-  phoneNumber: {
-    type: String,
-    required: false,
-  },
-  fullAddress: {
-    type: String,
-    required: true,
-  },
   createDate: {
     type: Date,
     default: Date.now,

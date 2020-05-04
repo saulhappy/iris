@@ -41,8 +41,10 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
     const {
+      city,
+      state,
+      zip,
       about,
-      neighborhood,
       openForRequests,
       helpWith,
       youtube,
@@ -56,8 +58,10 @@ router.post(
 
     const profileFields = {};
     profileFields.user = req.user.id;
+    if (city) profileFields.city = city;
+    if (state) profileFields.state = state;
+    if (zip) profileFields.zip = zip;
     if (about) profileFields.about = about;
-    if (neighborhood) profileFields.neighborhood = neighborhood;
     if (openForRequests) profileFields.openForRequests = openForRequests;
     if (helpWith) {
       profileFields.helpWith = helpWith.split(",");
@@ -102,6 +106,9 @@ router.get("/", async (req, res) => {
   try {
     const profiles = await Profile.find().populate("user", [
       "firstName",
+      "city",
+      "state",
+      "zip",
       "avatar",
     ]);
     res.json(profiles);
@@ -119,7 +126,7 @@ router.get("/user/:user_id", async (req, res) => {
   try {
     const profile = await Profile.findOne({
       user: req.params.user_id,
-    }).populate("user", ["firstName", "avatar"]);
+    }).populate("user", ["firstName", "city", "state", "zip", "avatar"]);
 
     // if no profile, send no profile found message.
     if (!profile)
