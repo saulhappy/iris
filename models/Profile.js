@@ -5,12 +5,21 @@ const ProfileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
   },
-  about: {
+  city: {
     type: String,
     required: true,
   },
-  neighborhood: {
+  state: {
     type: String,
+    required: true,
+  },
+  zip: {
+    type: String,
+    required: true,
+  },
+  about: {
+    type: String,
+    required: true,
   },
   openForRequests: {
     type: Boolean,
