@@ -12,17 +12,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     email: "",
     password: "",
     passwordVerify: "",
-    fullAddress: "",
   });
 
-  const {
-    firstName,
-    lastName,
-    email,
-    password,
-    passwordVerify,
-    fullAddress,
-  } = formData;
+  const { firstName, lastName, email, password, passwordVerify } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,7 +25,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     if (password !== passwordVerify) {
       setAlert("Error: passwords do not match. Please try again.", "danger");
     } else {
-      register({ firstName, lastName, email, fullAddress, password });
+      register({ firstName, lastName, email, password });
     }
   };
 
@@ -82,16 +74,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             This site used Gravatar for profile pictures. Gravatar email
             required for profile pictures.
           </small>
-        </div>
-
-        <div className='form-group'>
-          <input
-            type='text'
-            placeholder='123 Main St Your City, ST'
-            name='fullAddress'
-            value={fullAddress}
-            onChange={(e) => onChange(e)}
-          />
         </div>
 
         <div className='form-group'>

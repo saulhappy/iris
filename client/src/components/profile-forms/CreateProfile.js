@@ -4,8 +4,10 @@ import { connect } from "react-redux";
 
 const CreateProfile = (props) => {
   const [formData, setFormData] = useState({
+    city: "",
+    state: "",
+    zip: "",
     about: "",
-    neighborhood: "",
     openForRequests: "",
     helpWith: "",
     youtube: "",
@@ -18,6 +20,9 @@ const CreateProfile = (props) => {
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   const {
+    city,
+    state,
+    zip,
     about,
     neighborhood,
     openForRequests,
@@ -42,25 +47,45 @@ const CreateProfile = (props) => {
 
       <form className='form'>
         <div className='form-group'>
+          <input
+            type='text'
+            placeholder='City'
+            name='city'
+            value={city}
+            onChange={(e) => onChange(e)}
+          />
+        </div>
+
+        <div className='form-group'>
+          <input
+            type='text'
+            placeholder='State'
+            name='state'
+            value={state}
+            onChange={(e) => onChange(e)}
+            required
+          />
+        </div>
+
+        <div className='form-group'>
+          <input
+            type='text'
+            placeholder='Zip Code'
+            name='zip'
+            value={zip}
+            onChange={(e) => onChange(e)}
+          />
+        </div>
+
+        <div className='form-group'>
           <textarea
             placeholder='* Tell us a bit about yourself'
             name='about'
             value={about}
             onChange={(e) => onChange(e)}
           ></textarea>
-          <small className='form-text'>Tell us a little about yourself</small>
-        </div>
-
-        <div className='form-group'>
-          <textarea
-            placeholder='What part of town do you live in?'
-            name='neighborhood'
-            value={neighborhood}
-            onChange={(e) => onChange(e)}
-          ></textarea>
           <small className='form-text'>
-            Commonly known areas or neighborhoods for your town (e.g. downtown,
-            west side, south austin, etc.)
+            Your neighborhood, what you do for a living, favorite beer, etc...
           </small>
         </div>
 
