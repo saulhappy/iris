@@ -84,7 +84,9 @@ const CreateProfile = (props) => {
             value={about}
             onChange={(e) => onChange(e)}
           ></textarea>
-          <small className='form-text'>Tell us a little about yourself</small>
+          <small className='form-text'>
+            Your neighborhood, what you do for a living, favorite beer, etc...
+          </small>
         </div>
 
         <div className='form-group'>
