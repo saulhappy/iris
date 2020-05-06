@@ -22,8 +22,7 @@ const ProfileSchema = new mongoose.Schema({
     required: true,
   },
   openForRequests: {
-    type: Boolean,
-    default: false,
+    type: String,
     required: true,
   },
   helpWith: {
