@@ -33,7 +33,18 @@ router.get("/me", auth, async (req, res) => {
 
 router.post(
   "/",
+  [auth, [check("city", "City field is required").not().isEmpty()]],
+  [auth, [check("state", "State field is required").not().isEmpty()]],
+  [auth, [check("zip", "Zip Code field is required").not().isEmpty()]],
   [auth, [check("about", "About field is required").not().isEmpty()]],
+  [
+    auth,
+    [
+      check("openForRequests", "Open For Requests field is required")
+        .not()
+        .isEmpty(),
+    ],
+  ],
 
   async (req, res) => {
     const errors = validationResult(req);

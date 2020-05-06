@@ -49,7 +49,7 @@ const CreateProfile = (props) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='City'
+            placeholder='* City'
             name='city'
             value={city}
             onChange={(e) => onChange(e)}
@@ -116,7 +116,7 @@ const CreateProfile = (props) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='Zip Code'
+            placeholder='* Zip Code'
             name='zip'
             value={zip}
             onChange={(e) => onChange(e)}
