@@ -1,7 +1,12 @@
 import axios from "axios";
 import { setAlert } from "./alert";
 
-import { GET_PROFILE, PROFILE_ERROR } from "./types";
+import {
+  GET_PROFILE,
+  PROFILE_ERROR,
+  ACCOUNT_DELETED,
+  CLEAR_PROFILE,
+} from "./types";
 
 // get current user's profile
 export const getCurrentProfile = () => async (dispatch) => {
@@ -56,5 +61,32 @@ export const createProfile = (formData, history, edit = false) => async (
       type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },
     });
+  }
+};
+
+// delete account AND profile
+
+export const deleteAccount = () => async (dispatch) => {
+  if (
+    window.confirm(
+      "Are you sure? Your entire account will be deleted. This CAN NOT be undone."
+    )
+  ) {
+    try {
+      const res = await axios.delete(`/api/profile`);
+
+      dispatch({ type: CLEAR_PROFILE });
+      dispatch({ type: ACCOUNT_DELETED });
+
+      dispatch(setAlert("Sorry to see you go. Your account has been deleted."));
+    } catch (err) {
+      dispatch({
+        type: PROFILE_ERROR,
+        payload: {
+          msg: err.response.statusText,
+          status: err.err.response.statusText,
+        },
+      });
+    }
   }
 };
