@@ -43,7 +43,7 @@ const EditProfile = ({
       linkedin: loading || !profile.social ? "" : profile.social.linkedin,
       facebook: loading || !profile.social ? "" : profile.social.facebook,
     });
-  }, [loading]);
+  }, [loading, getCurrentProfile]);
 
   const {
     city,
