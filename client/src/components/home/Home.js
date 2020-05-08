@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
+import HomeActions from "./HomeActions";
 import { getCurrentProfile } from "../../actions/profile";
 
 const Home = ({
@@ -29,7 +30,9 @@ const Home = ({
         <i className='fas fa-house-user'> Hello {user && user.firstName}</i>
       </p> */}
       {profile !== null ? (
-        <Fragment>has profile</Fragment>
+        <Fragment>
+          <HomeActions />
+        </Fragment>
       ) : (
         <Fragment>
           <p>You have not set up a profile.</p>
