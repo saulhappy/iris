@@ -4,8 +4,8 @@ import { setAlert } from "./alert";
 import {
   GET_PROFILE,
   PROFILE_ERROR,
-  ACCOUNT_DELETED,
   CLEAR_PROFILE,
+  ACCOUNT_DELETED,
 } from "./types";
 
 // get current user's profile
@@ -78,7 +78,11 @@ export const deleteAccount = () => async (dispatch) => {
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: ACCOUNT_DELETED });
 
-      dispatch(setAlert("Sorry to see you go. Your account has been deleted."));
+      dispatch(
+        setAlert(
+          "Sorry to see you go. Your account has been permanently deleted."
+        )
+      );
     } catch (err) {
       dispatch({
         type: PROFILE_ERROR,
