@@ -1,8 +1,8 @@
 import {
   GET_PROFILE,
+  GET_PROFILES,
   PROFILE_ERROR,
   CLEAR_PROFILE,
-  GET_PROFILES,
 } from "../actions/types";
 
 const initialState = {
@@ -25,7 +25,7 @@ export default function (state = initialState, action) {
     case GET_PROFILES:
       return {
         ...state,
-        profile: payload,
+        profiles: payload,
         loading: false,
       };
     case PROFILE_ERROR:
@@ -38,7 +38,6 @@ export default function (state = initialState, action) {
       return {
         ...state,
         profile: null,
-        loading: false,
       };
     default:
       return state;

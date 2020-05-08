@@ -1,8 +1,8 @@
 import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import Spinner from "./ProfileItem";
-import ProfileItem from "../layout/Spinner";
+import Spinner from "../layout/Spinner";
+import ProfileItem from "./ProfileItem";
 import { getProfiles } from "../../actions/profile";
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
@@ -18,7 +18,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Fragment>
           <h1 className='large text-primary'>People Helping</h1>
           <p className='lead'>
-            <i className='fab fa-connectdevelop'></i> Browse and connect with
+            <i className='fas fa-hands-helping'></i> Browse and connect with
             helpers
           </p>
           <div className='profiles'>
@@ -40,7 +40,7 @@ Profiles.propTypes = {
   getProfiles: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
 };
-const maptStateToProps = (state) => ({
+const mapStateToProps = (state) => ({
   profile: state.profile,
 });
-export default connect(maptStateToProps, { getProfiles })(Profiles);
+export default connect(mapStateToProps, { getProfiles })(Profiles);
