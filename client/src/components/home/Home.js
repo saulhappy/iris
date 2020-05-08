@@ -33,11 +33,6 @@ const Home = ({
       {profile !== null ? (
         <Fragment>
           <HomeActions />
-          <div className='my-2'>
-            <button className='btn btn-danger' onClick={() => deleteAccount()}>
-              <i className='fas fa-user-minus'></i> Delete My Account
-            </button>
-          </div>
         </Fragment>
       ) : (
         <Fragment>
@@ -45,6 +40,11 @@ const Home = ({
           <Link to='/create-profile' className='btn btn-primary my-1'>
             Create Profile
           </Link>
+          <div className='my-2'>
+            <button className='btn btn-danger' onClick={() => deleteAccount()}>
+              <i className='fas fa-user-minus'></i> Delete My Account
+            </button>
+          </div>
         </Fragment>
       )}
     </Fragment>
