@@ -173,11 +173,12 @@ const EditProfile = ({
             onChange={(e) => onChange(e)}
           >
             <option value='0'>* Are you currently open for requests?</option>
-            <option value='Yes'>Yes</option>
-            <option value='No'>No</option>
+            <option value='true'>Yes</option>
+            <option value='false'>No</option>
           </select>
           <small className='form-text'>
-            Can others contact you to help them out?
+            By selecting "No" your account will still be active, but won't be
+            found by others looking for help.
           </small>
         </div>
 
