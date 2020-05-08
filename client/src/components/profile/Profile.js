@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 import { getProfileByID } from "../../actions/profile";
@@ -9,7 +10,19 @@ const Profile = ({ getProfileByID, profile: { profile, loading }, match }) => {
     getProfileByID(match.params.id);
   }, [getProfileByID]);
 
-  return <div>profile</div>;
+  return (
+    <Fragment>
+      {profile === null || loading ? (
+        <Spinner />
+      ) : (
+        <Fragment>
+          <Link to='/profiles' className='btn btn-light'>
+            Back to Profiles
+          </Link>
+        </Fragment>
+      )}
+    </Fragment>
+  );
 };
 
 Profile.propTypes = {
