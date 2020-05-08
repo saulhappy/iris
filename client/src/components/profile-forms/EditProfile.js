@@ -37,11 +37,11 @@ const EditProfile = ({
       openForRequests:
         loading || !profile.openForRequests ? "" : profile.openForRequests,
       helpWith: loading || !profile.helpWith ? "" : profile.helpWith.join(","),
-      youtube: loading || !profile.youtube ? "" : profile.youtube,
-      twitter: loading || !profile.twitter ? "" : profile.twitter,
-      instagram: loading || !profile.instagram ? "" : profile.instagram,
-      linkedin: loading || !profile.linkedin ? "" : profile.linkedin,
-      facebook: loading || !profile.facebook ? "" : profile.facebook,
+      youtube: loading || !profile.social ? "" : profile.social.youtube,
+      twitter: loading || !profile.social ? "" : profile.social.twitter,
+      instagram: loading || !profile.social ? "" : profile.social.instagram,
+      linkedin: loading || !profile.social ? "" : profile.social.linkedin,
+      facebook: loading || !profile.social ? "" : profile.social.facebook,
     });
   }, [loading]);
 
@@ -266,9 +266,9 @@ const EditProfile = ({
         )}
 
         <input type='submit' className='btn btn-primary my-1' />
-        <a className='btn btn-light my-1' href='dashboard.html'>
+        <Link className='btn btn-light my-1' to='/home'>
           Go Back
-        </a>
+        </Link>
       </form>
     </Fragment>
   );
