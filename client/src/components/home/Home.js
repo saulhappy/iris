@@ -14,7 +14,7 @@ const Home = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
 
   // if there is no profile and jsx of component still loading, show the spinner
   return loading && profile === null ? (
