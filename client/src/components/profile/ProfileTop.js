@@ -18,11 +18,15 @@ const ProfileTop = ({
         {", "} {state}{" "}
       </p>
       <div class='icons my-1'>
-        {/* {website && (    ADD PERSONAL WEBSITE?????
-          <a href='#' target='_blank' rel='noopener noreferrer'>
+        {social && social.personalSite && (
+          <a
+            href={social.personalSite}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <i class='fas fa-globe fa-2x'></i>
           </a>
-        )} */}
+        )}
 
         {social && social.twitter && (
           <a href={social.twitter} target='_blank' rel='noopener noreferrer'>
