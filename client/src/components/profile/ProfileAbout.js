@@ -17,23 +17,14 @@ const ProfileAbout = ({
       </Fragment>
     )}
 
-    <h2 class='text-primary'>Skill Set</h2>
+    <h2 class='text-primary'>{firstName} Can Help With: </h2>
     <div class='skills'>
-      <div class='p-1'>
-        <i class='fa fa-check'></i> HTML
-      </div>
-      <div class='p-1'>
-        <i class='fa fa-check'></i> CSS
-      </div>
-      <div class='p-1'>
-        <i class='fa fa-check'></i> JavaScript
-      </div>
-      <div class='p-1'>
-        <i class='fa fa-check'></i> Python
-      </div>
-      <div class='p-1'>
-        <i class='fa fa-check'></i> C#
-      </div>
+      {helpWith.map((help, index) => (
+        <div key={index} className='p-1'>
+          <i className='fas fa-check'></i>
+          {help}
+        </div>
+      ))}
     </div>
   </div>
 );
