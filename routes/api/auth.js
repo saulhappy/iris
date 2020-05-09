@@ -44,22 +44,20 @@ router.post(
       let user = await User.findOne({ email });
 
       if (!user) {
-        return res
-          .status(400)
-          .json({
-            errors: [{ msg: "User not found. Try a different email." }],
-          });
+        return res.status(400).json({
+          errors: [
+            { msg: "Account not found. Please verify the email address." },
+          ],
+        });
       }
 
       // confirm password
 
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) {
-        return res
-          .status(400)
-          .json({
-            errors: [{ msg: "Invalid credentials. Try a different password." }],
-          });
+        return res.status(400).json({
+          errors: [{ msg: "Invalid credentials. Please verify the password." }],
+        });
       }
 
       const payload = {
