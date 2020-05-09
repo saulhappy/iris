@@ -8,17 +8,17 @@ const ProfileAbout = ({
     user: { firstName },
   },
 }) => (
-  <div class='profile-about bg-light p-2'>
+  <div className='profile-about bg-light p-2'>
     {about && (
       <Fragment>
-        <h2 class='text-primary'>About {firstName}</h2>
+        <h2 className='text-primary'>About {firstName}</h2>
         <p>{about}</p>
-        <div class='line'></div>
+        <div className='line'></div>
       </Fragment>
     )}
 
-    <h2 class='text-primary'>{firstName} Can Help With: </h2>
-    <div class='skills'>
+    <h2 className='text-primary'>{firstName} Can Help With: </h2>
+    <div className='skills'>
       {helpWith.map((help, index) => (
         <div key={index} className='p-1'>
           <i className='fas fa-check'></i>

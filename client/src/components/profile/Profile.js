@@ -33,7 +33,7 @@ const Profile = ({
                 Edit Profile
               </Link>
             )}
-          <div class='profie-grid my-1'>
+          <div className='profie-grid my-1'>
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
           </div>
