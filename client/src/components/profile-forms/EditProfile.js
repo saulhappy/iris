@@ -17,6 +17,7 @@ const EditProfile = ({
     about: "",
     openForRequests: "",
     helpWith: "",
+    personalSite: "",
     youtube: "",
     twitter: "",
     instagram: "",
@@ -37,6 +38,8 @@ const EditProfile = ({
       openForRequests:
         loading || !profile.openForRequests ? "" : profile.openForRequests,
       helpWith: loading || !profile.helpWith ? "" : profile.helpWith.join(","),
+      personalSite:
+        loading || !profile.social ? "" : profile.social.personalSite,
       youtube: loading || !profile.social ? "" : profile.social.youtube,
       twitter: loading || !profile.social ? "" : profile.social.twitter,
       instagram: loading || !profile.social ? "" : profile.social.instagram,
@@ -53,6 +56,7 @@ const EditProfile = ({
     openForRequests,
     helpWith,
     youtube,
+    personalSite,
     twitter,
     instagram,
     linkedin,
@@ -202,13 +206,24 @@ const EditProfile = ({
             type='button'
             className='btn btn-light'
           >
-            Add Social Network Links
+            Add Personal Website And Social Network Links
           </button>
           <span>Optional</span>
         </div>
 
         {displaySocialInputs && (
           <Fragment>
+            <div className='form-group social-input'>
+              <i className='fas fa-globe fa-2x'></i>
+              <input
+                type='text'
+                placeholder='Personal Website URL'
+                name='personalSite'
+                value={personalSite}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+
             <div className='form-group social-input'>
               <i className='fab fa-twitter fa-2x'></i>
               <input

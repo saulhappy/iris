@@ -12,6 +12,7 @@ const CreateProfile = ({ createProfile, history }) => {
     about: "",
     openForRequests: "",
     helpWith: "",
+    personalSite: "",
     youtube: "",
     twitter: "",
     instagram: "",
@@ -28,6 +29,7 @@ const CreateProfile = ({ createProfile, history }) => {
     about,
     openForRequests,
     helpWith,
+    personalSite,
     youtube,
     twitter,
     instagram,
@@ -178,13 +180,24 @@ const CreateProfile = ({ createProfile, history }) => {
             type='button'
             className='btn btn-light'
           >
-            Add Social Network Links
+            Add Personal Website And Social Network Links
           </button>
           <span>Optional</span>
         </div>
 
         {displaySocialInputs && (
           <Fragment>
+            <div className='form-group social-input'>
+              <i className='fas fa-globe fa-2x'></i>
+              <input
+                type='text'
+                placeholder='Personal Website'
+                name='personalSite'
+                value={personalSite}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+
             <div className='form-group social-input'>
               <i className='fab fa-twitter fa-2x'></i>
               <input

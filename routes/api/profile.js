@@ -59,6 +59,7 @@ router.post(
       about,
       openForRequests,
       helpWith,
+      personalSite,
       youtube,
       twitter,
       instagram,
@@ -80,6 +81,7 @@ router.post(
     }
     // Build social object
     profileFields.social = {};
+    if (personalSite) profileFields.social.personalSite = personalSite;
     if (youtube) profileFields.social.youtube = youtube;
     if (twitter) profileFields.social.twitter = twitter;
     if (instagram) profileFields.social.instagram = instagram;
