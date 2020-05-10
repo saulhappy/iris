@@ -16,7 +16,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner />
       ) : (
         <Fragment>
-          <h1 className='large text-primary'>People Helping</h1>
+          <h1 className='large text-primary'>Iris Community of Helpers</h1>
           <p className='lead'>
             <i className='fas fa-hands-helping'></i> Browse and connect with
             helpers
