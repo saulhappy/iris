@@ -6,13 +6,17 @@ const ProfileTop = ({
     city,
     state,
     social,
-    user: { firstName, avatar },
+    user: { firstName, lastName, avatar },
   },
 }) => {
   return (
     <div className='profile-top bg-primary p-2'>
       <img className='round-img my-1' src={avatar} alt='' />
-      <h1 className='large'>{firstName}</h1>
+
+      <h1 className='large'>
+        {firstName} {lastName}
+      </h1>
+
       <p className='lead'>
         {city}
         {", "} {state}{" "}
