@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect } from "./node_modules/react";
-import PropTypes from "./node_modules/prop-types";
+import React, { Fragment, useEffect } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import Sinner from "../layout/Spinner";
+import Spinner from "../layout/Spinner";
 import { getPost } from "../../actions/post";
 
 const Post = ({ getPost, post: { post, loading }, match }) => {
