@@ -27,26 +27,31 @@ const EditProfile = ({
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
-  useEffect(() => {
-    getCurrentProfile();
+  useEffect(
+    () => {
+      getCurrentProfile();
 
-    setFormData({
-      city: loading || !profile.city ? "" : profile.city,
-      state: loading || !profile.state ? "" : profile.state,
-      zip: loading || !profile.zip ? "" : profile.zip,
-      about: loading || !profile.about ? "" : profile.about,
-      openForRequests:
-        loading || !profile.openForRequests ? "" : profile.openForRequests,
-      helpWith: loading || !profile.helpWith ? "" : profile.helpWith.join(","),
-      personalSite:
-        loading || !profile.social ? "" : profile.social.personalSite,
-      youtube: loading || !profile.social ? "" : profile.social.youtube,
-      twitter: loading || !profile.social ? "" : profile.social.twitter,
-      instagram: loading || !profile.social ? "" : profile.social.instagram,
-      linkedin: loading || !profile.social ? "" : profile.social.linkedin,
-      facebook: loading || !profile.social ? "" : profile.social.facebook,
-    });
-  }, [loading, getCurrentProfile]);
+      setFormData({
+        city: loading || !profile.city ? "" : profile.city,
+        state: loading || !profile.state ? "" : profile.state,
+        zip: loading || !profile.zip ? "" : profile.zip,
+        about: loading || !profile.about ? "" : profile.about,
+        openForRequests:
+          loading || !profile.openForRequests ? "" : profile.openForRequests,
+        helpWith:
+          loading || !profile.helpWith ? "" : profile.helpWith.join(","),
+        personalSite:
+          loading || !profile.social ? "" : profile.social.personalSite,
+        youtube: loading || !profile.social ? "" : profile.social.youtube,
+        twitter: loading || !profile.social ? "" : profile.social.twitter,
+        instagram: loading || !profile.social ? "" : profile.social.instagram,
+        linkedin: loading || !profile.social ? "" : profile.social.linkedin,
+        facebook: loading || !profile.social ? "" : profile.social.facebook,
+      });
+    },
+    // eslint-disable-next-line
+    [loading, getCurrentProfile]
+  );
 
   const {
     city,
