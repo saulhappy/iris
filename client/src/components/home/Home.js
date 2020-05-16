@@ -25,11 +25,8 @@ const Home = ({
         Welcome home, {user && user.firstName}
       </h1>
 
-      {/* alternative style, unsure what to go with yet:  
-      <h1 className='large text-primary'>Home</h1>
-      <p className='lead'>
-        <i className='fas fa-house-user'> Hello {user && user.firstName}</i>
-      </p> */}
+      <p className='lead'>Click below to view and update your information</p>
+
       {profile !== null ? (
         <Fragment>
           <HomeActions />
