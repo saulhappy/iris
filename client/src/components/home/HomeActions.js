@@ -7,7 +7,7 @@ const HomeActions = () => {
       <Link to='/edit-profile' className='btn btn-light'>
         <i className='fas fa-user-circle text-primary'></i> Edit My Profile
       </Link>
-      <Link to='/edit-profile' className='btn btn-light'>
+      <Link to='/posts/my-posts' className='btn btn-light'>
         <i className='far fa-comments'></i> View My Posts
       </Link>
     </div>
