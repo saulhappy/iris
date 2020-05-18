@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-const HomeActions = (auth) => {
+const HomeActions = ({ auth }) => {
   return (
     <div className='dash-buttons'>
       <Link to={`/profile/${auth.user._id}`} className='btn btn-light'>
