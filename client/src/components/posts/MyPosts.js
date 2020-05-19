@@ -1,12 +1,15 @@
-import React, { useEffect, Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 import PostItem from "./PostItem";
+import PostForm from "./PostForm";
+import { getPosts } from "../../actions/post";
 
-const MyPosts = ({ post: { posts, loading }, auth: { user } }) => {
-  useEffect(() => {}, []);
-  console.log(posts);
+const Post = ({ getPosts, post: { posts, loading }, auth: { user } }) => {
+  useEffect(() => {
+    getPosts();
+  }, [getPosts]);
   return loading ? (
     <Spinner />
   ) : (
@@ -15,18 +18,18 @@ const MyPosts = ({ post: { posts, loading }, auth: { user } }) => {
       <p className='lead'>
         <i className='fas fa-comment'></i> Welcome to the forum
       </p>
+      <PostForm />
       <div className='posts'>
-        {posts
-          .filter((post) => post.user === user._id)
-          .map((post) => (
-            <PostItem key={post._id} post={post} />
-          ))}
+        {posts.map((post) => (
+          <PostItem key={post._id} post={post} />
+        ))}
       </div>
     </Fragment>
   );
 };
 
-MyPosts.propTypes = {
+Post.propTypes = {
+  getPosts: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   post: PropTypes.object.isRequired,
 };
@@ -36,4 +39,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps)(MyPosts);
+export default connect(mapStateToProps, { getPosts })(Post);
