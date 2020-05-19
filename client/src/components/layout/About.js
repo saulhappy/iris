@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import rainbowHand from "../layout/rainbowHand.jpg";
 
 export default function About() {
   return (
@@ -28,7 +29,21 @@ export default function About() {
           else in need.
         </p>
         <br></br>
-        <p>Saul Feliz</p>
+        <p>
+          {" "}
+          <b>Saul Feliz</b>
+        </p>
+        <a href='https://www.linkedin.com/in/saul-feliz/'>LinkedIn</a>
+        <br></br>
+        <a href='https://github.com/saulhappy'>GitHub</a>
+        <br></br>
+        <a href='https://saulfeliz.com/'>Portfolio</a>
+
+        <img
+          src={rainbowHand}
+          style={{ width: "400px", margin: "auto", display: "block" }}
+          alt=''
+        />
       </div>
     </Fragment>
   );
