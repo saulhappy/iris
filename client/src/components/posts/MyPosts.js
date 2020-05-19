@@ -19,9 +19,6 @@ const Post = ({ getPosts, post: { posts, loading }, auth: { user } }) => {
           posts
             .filter((post) => post.user === user._id)
             .map((post) => <PostItem key={post._id} post={post} />)}
-        {/* {posts.map((post) => (
-          <PostItem key={post._id} post={post} />
-        ))} */}
       </div>
     </Fragment>
   );
