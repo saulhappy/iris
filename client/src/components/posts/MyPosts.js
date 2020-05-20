@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 import PostItem from "./PostItem";
+import PostForm from "./PostForm";
 import { getPosts } from "../../actions/post";
 
 const Post = ({ getPosts, post: { posts, loading }, auth: { user } }) => {
@@ -13,12 +14,20 @@ const Post = ({ getPosts, post: { posts, loading }, auth: { user } }) => {
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='large text-primary'>Here Are Your Posts</h1>
       <div className='posts'>
+        <h1 className='large text-primary'>Posts that you've submitted</h1>
+
         {user &&
           posts
             .filter((post) => post.user === user._id)
             .map((post) => <PostItem key={post._id} post={post} />)}
+
+        {!posts.some((post) => post.user === user._id) && (
+          <div className='posts'>
+            <p className='lead'>No posts found. Submit your first one below!</p>
+            <PostForm />
+          </div>
+        )}
       </div>
     </Fragment>
   );
