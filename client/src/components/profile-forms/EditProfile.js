@@ -76,6 +76,8 @@ const EditProfile = ({
     createProfile(formData, history, true);
   };
 
+  const hStyle = { color: "red" };
+
   return (
     <Fragment>
       <h1 className='large text-primary'>Edit Your Profile</h1>
@@ -83,7 +85,23 @@ const EditProfile = ({
         <i className='fas fa-user'></i> Tell us about yourself and how you'd
         like to help others
       </p>
-      <small>* = required field</small>
+
+      <div>
+        <small style={hStyle}>
+          Please note: profile pictures are currently only displayed through
+          Gravatar. Please visit{" "}
+          <a
+            href='https://en.gravatar.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            gravatar.com
+          </a>{" "}
+          for more information.
+        </small>
+      </div>
+      <br></br>
+      <small>* denotes required field</small>
 
       <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>

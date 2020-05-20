@@ -71,8 +71,15 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             onChange={(e) => onChange(e)}
           />
           <small className='form-text'>
-            This site used Gravatar for profile pictures. Gravatar email
-            required for profile pictures.
+            This site uses Gravatar for profile pictures. Please visit{" "}
+            <a
+              href='https://en.gravatar.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              gravatar.com
+            </a>{" "}
+            for more information.
           </small>
         </div>
 
