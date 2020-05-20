@@ -12,7 +12,7 @@ const HomeActions = ({ auth }) => {
       <Link to='/edit-profile' className='btn btn-light'>
         <i className='fas fa-user-edit text-primary'></i> Edit My Profile
       </Link>
-      <Link to='/posts/my-posts' className='btn btn-light'>
+      <Link to='/my-posts' className='btn btn-light'>
         <i className='fas fa-comments text-primary'></i> View My Posts
       </Link>
     </div>
