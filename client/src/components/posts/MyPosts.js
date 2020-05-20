@@ -17,20 +17,16 @@ const Post = ({ getPosts, post: { posts, loading }, auth: { user } }) => {
       <div className='posts'>
         <h1 className='large text-primary'>Posts that you've submitted</h1>
 
-        {posts
-          .filter((post) => post.user === user._id)
-          .map((post) => (
-            <PostItem key={post._id} post={post} />
-          ))}
+        {user &&
+          posts
+            .filter((post) => post.user === user._id)
+            .map((post) => <PostItem key={post._id} post={post} />)}
 
         {!posts.some((post) => post.user === user._id) && (
-          <h3>
-            No posts found. Submit your first one below!
-            <br></br>
-            <p>
-              <PostForm />
-            </p>
-          </h3>
+          <div className='posts'>
+            <p className='lead'>No posts found. Submit your first one below!</p>
+            <PostForm />
+          </div>
         )}
       </div>
     </Fragment>
