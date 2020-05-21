@@ -111,7 +111,7 @@ const EditProfile = ({
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Email address'
+            placeholder='* Email address others can reach you at...'
             name='email'
             value={email}
             onChange={(e) => onChange(e)}

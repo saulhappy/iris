@@ -34,6 +34,7 @@ router.get("/me", auth, async (req, res) => {
 
 router.post(
   "/",
+  [auth, [check("email", "Email field is required").not().isEmpty()]],
   [auth, [check("city", "City field is required").not().isEmpty()]],
   [auth, [check("state", "State field is required").not().isEmpty()]],
   [auth, [check("zip", "Zip Code field is required").not().isEmpty()]],
@@ -53,6 +54,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
     const {
+      email,
       city,
       state,
       zip,
@@ -71,6 +73,7 @@ router.post(
 
     const profileFields = {};
     profileFields.user = req.user.id;
+    if (email) profileFields.email = email;
     if (city) profileFields.city = city;
     if (state) profileFields.state = state;
     if (zip) profileFields.zip = zip;
@@ -121,6 +124,7 @@ router.get("/", async (req, res) => {
     const profiles = await Profile.find().populate("user", [
       "firstName",
       "lastName",
+      "email",
       "city",
       "state",
       "zip",
@@ -144,6 +148,7 @@ router.get("/user/:user_id", async (req, res) => {
     }).populate("user", [
       "firstName",
       "lastName",
+      "email",
       "city",
       "state",
       "zip",
