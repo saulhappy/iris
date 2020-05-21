@@ -5,11 +5,10 @@ import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
-import { getProfileByID, deleteAccount } from "../../actions/profile";
+import { getProfileByID } from "../../actions/profile";
 
 const Profile = ({
   getProfileByID,
-  deleteAccount,
   profile: { profile, loading },
   auth,
   match,
@@ -41,17 +40,6 @@ const Profile = ({
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
           </div>
-
-          {auth.isAuthenticated &&
-            auth.loading === false &&
-            auth.user._id === profile.user._id && (
-              <button
-                className='btn btn-danger'
-                onClick={() => deleteAccount()}
-              >
-                <i className='fas fa-user-minus'></i> Delete My Account
-              </button>
-            )}
         </Fragment>
       )}
     </Fragment>
@@ -70,6 +58,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { getProfileByID, deleteAccount })(
-  Profile
-);
+export default connect(mapStateToProps, { getProfileByID })(Profile);
