@@ -6,11 +6,13 @@ import { Link, withRouter } from "react-router-dom";
 
 const EditProfile = ({
   profile: { profile, loading },
+  auth: { user },
   createProfile,
   getCurrentProfile,
   history,
 }) => {
   const [formData, setFormData] = useState({
+    email: "",
     city: "",
     state: "",
     zip: "",
@@ -32,6 +34,7 @@ const EditProfile = ({
       getCurrentProfile();
 
       setFormData({
+        email: loading || !user.email ? "" : user.email,
         city: loading || !profile.city ? "" : profile.city,
         state: loading || !profile.state ? "" : profile.state,
         zip: loading || !profile.zip ? "" : profile.zip,
@@ -54,6 +57,7 @@ const EditProfile = ({
   );
 
   const {
+    email,
     city,
     state,
     zip,
@@ -76,7 +80,7 @@ const EditProfile = ({
     createProfile(formData, history, true);
   };
 
-  const hStyle = { color: "red" };
+  const hStyle = { color: "#98669d" };
 
   return (
     <Fragment>
@@ -104,6 +108,16 @@ const EditProfile = ({
       <small>* denotes required field</small>
 
       <form className='form' onSubmit={(e) => onSubmit(e)}>
+        <div className='form-group'>
+          <input
+            type='text'
+            placeholder='* Email address others can reach you at...'
+            name='email'
+            value={email}
+            onChange={(e) => onChange(e)}
+          />
+        </div>
+
         <div className='form-group'>
           <input
             type='text'
@@ -317,10 +331,12 @@ EditProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   profile: state.profile,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(

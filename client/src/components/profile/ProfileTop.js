@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 const ProfileTop = ({
   profile: {
+    email,
     city,
     state,
     social,
@@ -62,6 +63,7 @@ const ProfileTop = ({
           </a>
         )}
       </div>
+      <h3>{email}</h3>
     </div>
   );
 };
