@@ -80,7 +80,7 @@ const EditProfile = ({
     createProfile(formData, history, true);
   };
 
-  const hStyle = { color: "red" };
+  const hStyle = { color: "#98669d" };
 
   return (
     <Fragment>
