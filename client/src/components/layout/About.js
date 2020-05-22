@@ -31,7 +31,7 @@ export default function About() {
         <br></br>
         <p>
           {" "}
-          <b>Saul Feliz</b>
+          <h4>Saul Feliz</h4>
         </p>
         <a href='https://www.linkedin.com/in/saul-feliz/'>LinkedIn</a>
         <br></br>
@@ -41,9 +41,29 @@ export default function About() {
 
         <img
           src={rainbowHand}
-          style={{ width: "400px", margin: "auto", display: "block" }}
+          style={{ width: "600px", margin: "auto", display: "block" }}
           alt=''
         />
+        <br></br>
+        <h4>P.S. Some upcoming features I intend to work on include:</h4>
+        <li>Password reminder</li>
+        <li>
+          Profile photo upload. Currently profile pictures are displayed through
+          Gravatar. Please visit{" "}
+          <a
+            href='https://en.gravatar.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            gravatar.com
+          </a>{" "}
+          for more information.
+        </li>
+        <li>Notifications of comments on user posts</li>
+        <li>
+          ...other features users want. Feel free to contact me at
+          646634@gmail.com for requests!
+        </li>
       </div>
     </Fragment>
   );
