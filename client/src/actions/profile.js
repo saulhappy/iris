@@ -108,6 +108,9 @@ export const deleteAccount = () => async (dispatch) => {
     )
   ) {
     try {
+      // eslint-disable-next-line
+      const res = await axios.delete("/api/profile");
+
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: ACCOUNT_DELETED });
 

@@ -48,7 +48,6 @@ const Profile = ({
 
 Profile.propTypes = {
   getProfileByID: PropTypes.func.isRequired,
-  deleteAccount: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
 };
