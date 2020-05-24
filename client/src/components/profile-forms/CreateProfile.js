@@ -6,6 +6,7 @@ import { Link, withRouter } from "react-router-dom";
 
 const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState({
+    email: "",
     city: "",
     state: "",
     zip: "",
@@ -23,6 +24,7 @@ const CreateProfile = ({ createProfile, history }) => {
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   const {
+    email,
     city,
     state,
     zip,
@@ -55,6 +57,16 @@ const CreateProfile = ({ createProfile, history }) => {
       <small>* = required field</small>
 
       <form className='form' onSubmit={(e) => onSubmit(e)}>
+        <div className='form-group'>
+          <input
+            type='text'
+            placeholder='* Email address others can reach you at...'
+            name='email'
+            value={email}
+            onChange={(e) => onChange(e)}
+          />
+        </div>
+
         <div className='form-group'>
           <input
             type='text'
