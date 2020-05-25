@@ -65,7 +65,7 @@ TBD
 
 ## Deployment
 
-This application is deployed on Heroku. You can visit it here: project-iris-app.herokuapp.com(https://project-iris-app.herokuapp.com/)
+This application is deployed on Heroku. You can visit it here: [project-iris-app.herokuapp.com](https://project-iris-app.herokuapp.com/)
 
 ## Contact
 
