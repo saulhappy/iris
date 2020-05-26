@@ -60,8 +60,9 @@ Users are able to experience the following functionalities:
 - Post comments, delete comments, like and unlike comments. Comments can only be liked once per user. Comments live independent of the user, so that their comments can exist even if a user deletes their profile.
 
 ## Demo
+Click the video image below to be redirected to a demo video.
+[![IMAGE ALT TEXT HERE](https://youtu.be/6DF7TgVmXiI)
 
-TBD
 
 ## Deployment
 
