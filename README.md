@@ -60,12 +60,13 @@ Users are able to experience the following functionalities:
 - Post comments, delete comments, like and unlike comments. Comments can only be liked once per user. Comments live independent of the user, so that their comments can exist even if a user deletes their profile.
 
 ## Demo
+Click the video image below to be redirected to a demo video.
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/6DF7TgVmXiI/0.jpg)](https://youtu.be/6DF7TgVmXiI)
 
-TBD
 
 ## Deployment
 
-TBD
+This application is deployed on Heroku. You can visit it here: [project-iris-app.herokuapp.com](https://project-iris-app.herokuapp.com/)
 
 ## Contact
 
