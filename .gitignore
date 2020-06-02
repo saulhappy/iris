@@ -5,6 +5,7 @@
 
 # Heroku deployment prep
 config/default.json
+config/production.json
 
 # User-specific files
 *.rsuser

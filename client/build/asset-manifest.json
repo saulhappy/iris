@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a44b08a0.chunk.css",
+    "main.js": "/static/js/main.37d9a869.chunk.js",
+    "main.js.map": "/static/js/main.37d9a869.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.597b7f10.js",
+    "runtime-main.js.map": "/static/js/runtime-main.597b7f10.js.map",
+    "static/js/2.e53e1d7c.chunk.js": "/static/js/2.e53e1d7c.chunk.js",
+    "static/js/2.e53e1d7c.chunk.js.map": "/static/js/2.e53e1d7c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ea4fc18f6bad6dfee333b577a9942086.js": "/precache-manifest.ea4fc18f6bad6dfee333b577a9942086.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.a44b08a0.chunk.css.map": "/static/css/main.a44b08a0.chunk.css.map",
+    "static/js/2.e53e1d7c.chunk.js.LICENSE.txt": "/static/js/2.e53e1d7c.chunk.js.LICENSE.txt",
+    "static/media/rainbowHand.jpg": "/static/media/rainbowHand.cc22aa25.jpg",
+    "static/media/App.css": "/static/media/showcase.72dfb9c8.jpg",
+    "static/media/spinner.gif": "/static/media/spinner.6192e41a.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.597b7f10.js",
+    "static/js/2.e53e1d7c.chunk.js",
+    "static/css/main.a44b08a0.chunk.css",
+    "static/js/main.37d9a869.chunk.js"
+  ]
+}
