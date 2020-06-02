@@ -1,4 +1,5 @@
 {
   "mongoURI": "mongodb+srv://sfeliz:tAuTVlFFuOnFlk9Q@iris-ijpqc.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "userSecretToken"
+  "jwtSecret": "userSecretToken",
+  "githubToken": "488b688f44ead461ce3652a6bd8d73a4692663ff"
 }
