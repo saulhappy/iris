@@ -59,6 +59,7 @@ Users are able to experience the following functionalities:
 
 ## Demo
 Click the video image below to be redirected to a demo video.
+
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/6DF7TgVmXiI/0.jpg)](https://youtu.be/6DF7TgVmXiI)
 
 
