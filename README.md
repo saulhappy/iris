@@ -64,8 +64,8 @@ Click the video image below to be redirected to a demo video.
 
 ## Deployment
 
-This application is deployed on Heroku. You can visit it here: [project-iris-app.herokuapp.com](https://project-iris-app.herokuapp.com/)
+This application was deployed on Heroku. It has since been taken down.
 
 ## Contact
 
-**Saul Feliz** [LinkedIn](https://www.linkedin.com/in/saul-feliz/) // [Portfolio](https://saulfeliz.com/)
+**Saul Feliz** [LinkedIn](https://www.linkedin.com/in/saul-feliz/)
